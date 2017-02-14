@@ -23,10 +23,11 @@ int main() {
   c.blue = MAX_COLOR;
   draw_line(1, 2, 278, 146, s, c);
 
-  c.red = 120;
-  c.green = MAX_COLOR;
-  c.blue = 0;
   draw_line(56, 89, 432, 108, s, c);
+
+  draw_line_2(0, 0, 100, 300, s, c);
+
+  //draw_line(100, 500, 400, 400, s, c);
 
 
   
