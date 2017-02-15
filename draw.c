@@ -5,7 +5,7 @@
 #include "display.h"
 #include "draw.h"
 
-/*
+
 //Insert your line algorithm here
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     
@@ -73,9 +73,101 @@ void draw_line_2(int y0, int x0, int y1, int x1, screen s, color c) {
   
 }
 
-*/
+
+void draw_line_8(int x0, int y0, int x1, int y1, screen s, color c) {
+
+  //shift down by 500
+  y0=y0-500;
+  y1=y1-500;
+
+  //reflect y=0
+  y0=-1*y0;
+  y1=-1*y1;
+  
+  //needed variables
+  int A;
+  int B;
+
+  int x = x0;
+  int y = y0;
+
+  //setup
+  A = y1-y0;
+  B = (-1) * (x1-x0);
+  //for now we can subtract x1 from x0, as we ae dealing with octet 1
+
+  int d = 2*A + B;
+
+  A=2*A;
+  B=2*B;
+  
+  while(x<=x1){
+    //when we plot we revert them
+    plot(s, c, x, -1*y+500);
+
+    if(d>0){
+      y++;
+      d+=B;
+    }
+    x++;
+    d+=A;
+  }
+  
+}
+
+void draw_line_7(int x0, int y0, int x1, int y1, screen s, color c) {
+  
+  //shift down by 500
+  y0=y0-500;
+  y1=y1-500;
+
+  //reflect y=0
+  y0=-1*y0;
+  y1=-1*y1;
+
+  int zero_hold  = x0;
+  int one_hold = x1;
+
+  x0=y0;
+  y0=zero_hold;
+  x1=y1;
+  y1=one_hold;
+  
+  //needed variables
+  int A;
+  int B;
+
+  int x = x0;
+  int y = y0;
+
+  //setup
+  A = y1-y0;
+  B = (-1) * (x1-x0);
+  //for now we can subtract x1 from x0, as we ae dealing with octet 1
+
+  int d = 2*A + B;
+
+  A=2*A;
+  B=2*B;
+  
+  while(x<=x1){
+    //when we plot we revert them
+    plot(s, c, y, -1*x+500);
+
+    if(d>0){
+      y++;
+      d+=B;
+    }
+    x++;
+    d+=A;
+  }
+  
+}
 
 
+
+
+/*
 //////BAD METHOD:
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   //[3-6]
@@ -234,3 +326,4 @@ void draw_line_8(int x0, int y0, int x1, int y1, screen s, color c) {
   }
   
 }
+*/
