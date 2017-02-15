@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include "ml6.h"
 #include "display.h"
@@ -18,7 +19,7 @@ int main() {
   c.green = MAX_COLOR;
   c.blue = MAX_COLOR;
 
-  
+   
   int i=0;
   for(i=0; i<=10; i++){
     draw_line(250,250,50*i, 500,s,c);
@@ -35,7 +36,8 @@ int main() {
   for(i=0; i<=10; i++){
     draw_line(250,250,0,50*i,s,c);
   }
-  
+
+
   /*
 
   draw_line(1, 2, 278, 146, s, c);
@@ -49,11 +51,15 @@ int main() {
   c.green = MAX_COLOR;
   c.blue = 0;
 
+  /*
+  
   draw_line(100, 100, 400, 400, s, c);
   draw_line(300, 400, 0, 100, s, c);
   draw_line(100, 400, 400, 400, s, c);
   draw_line(100, 100, 100, 500, s, c);
   
+  */
+
   display(s);
   save_ppm(s, "lines.ppm");
   save_extension(s, "lines.png");
