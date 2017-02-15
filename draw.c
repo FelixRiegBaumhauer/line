@@ -45,8 +45,8 @@ void draw_basic_line(int x0, int y0, int x1, int y1, screen s, color c, int swap
 
   if(bottom == 1){
     //shift down by 500
-    y0=y0-500;
-    y1=y1-500;
+    y0=y0-YRES;
+    y1=y1-YRES;
     
     //reflect y=0
     y0=-1*y0;
@@ -83,7 +83,7 @@ void draw_basic_line(int x0, int y0, int x1, int y1, screen s, color c, int swap
   while(x<=x1){
     if(swap == 0){
       if(bottom == 1){
-	plot(s, c, x, -1*y+500);
+	plot(s, c, x, -1*y+YRES);
       }
       else{
 	plot(s, c, x, y);
@@ -91,7 +91,7 @@ void draw_basic_line(int x0, int y0, int x1, int y1, screen s, color c, int swap
     }
     else{
       if(bottom == 1){
-	plot(s, c, y, -1*x+500);
+	plot(s, c, y, -1*x+YRES);
       }
       else{
 	plot(s, c, y, x);
