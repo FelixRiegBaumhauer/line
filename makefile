@@ -2,6 +2,9 @@ OBJECTS= main.o draw.o display.o
 CFLAGS= -Wall
 CC= gcc
 
+run: all
+	./main
+
 all: $(OBJECTS)
 	$(CC) -o main $(OBJECTS)
 

@@ -43,20 +43,7 @@ int main() {
   draw_line_8(100,400,400,300,s,c);
   draw_line_7(100,400,200,200,s,c);
   */
-  /*
-  draw_line(1, 2, 278, 146, s, c);
 
-  draw_line(56, 89, 432, 108, s, c);
-
-  draw_line_2(0, 0, 100, 300, s, c);
-  */
-  /*
-  draw_line_1(10,10,500,100,s,c);
-  draw_line_2(10,10,100,500,s,c);
-  draw_line_7(10,490,100,100,s,c);
-  draw_line_8(10,490,500,400,s,c);
-  */
-  //draw_line(100, 500, 400, 400, s, c);
 
   c.red = 0;
   c.green = MAX_COLOR;
